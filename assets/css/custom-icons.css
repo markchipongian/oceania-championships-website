@@ -1,0 +1,18 @@
+/* 
+Custom collection of icons.
+All credits to their respective authors as commented above classes.
+
+*/
+
+
+/*
+Name:  Target free icon
+Link: https://www.flaticon.com/authors/vectors-market
+Author: Vectors Market
+*/
+.arrow-target{
+    background-image: url('../icons/target.svg');
+    width: 3rem;
+}
+
+
