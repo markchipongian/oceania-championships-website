@@ -165,13 +165,12 @@
   }
   
   a {
-	color: #1abc9c;
+	color: #007bff;
 	text-decoration: none;
 	background-color: transparent;
   }
   
   a:hover {
-	color: #117964;
 	text-decoration: underline;
   }
   
@@ -1375,7 +1374,7 @@
   .table {
 	width: 100%;
 	margin-bottom: 1rem;
-	color: #212529;
+	color: #2f5497;
   }
   
   .table th,
@@ -1418,6 +1417,10 @@
   .table-borderless thead th,
   .table-borderless tbody + tbody {
 	border: 0;
+  }
+
+  .table-borderless tr {
+	font-size: 1.25rem;
   }
   
   .table-striped tbody tr:nth-of-type(odd) {
@@ -2262,8 +2265,8 @@
   
   .btn-primary {
 	color: #fff;
-	background-color: #1abc9c;
-	border-color: #1abc9c;
+	background-color: #2f5497;
+	border-color: #2f5497;
   }
   
   .btn-primary:hover {
@@ -3093,12 +3096,14 @@
   }
   
   .dropdown-item:hover, .dropdown-item:focus {
-	color: var(--primary);
+	/* color: var(--primary); */
+	color: white;
+	background-color: transparent;
 	text-decoration: underline;
-	background-color: white;
+	/* background-color: white;
 	border-left: 0.125rem double var(--primary);
 	border-right: 0.125rem double var(--primary);
-	border-radius: 0.5rem;
+	border-radius: 0.5rem; */
   }
   
   .dropdown-item.active, .dropdown-item:active {
@@ -7620,6 +7625,10 @@
   .mx-5 {
 	margin-left: 3rem !important;
   }
+
+  .ml-table{
+	margin-left: 6em !important;
+  }
   
   .p-0 {
 	padding: 0 !important;
@@ -9759,12 +9768,12 @@
   
   #mainNav .navbar-nav li.nav-item a.nav-link:hover {
 	color: #fff;
-	/* text-decoration: underline white;
-	 */
-	border-top: 2px solid;
+	text-decoration: underline white;
+	
+	/* border-top: 2px solid;
 	border-bottom: 2px solid;
 	border-radius: 0 !important;
-	margin: -2px 0 !important;
+	margin: -2px 0 !important; */
   }
 
   #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
@@ -9863,11 +9872,11 @@
 	left: 0;
 	transition: all 0.2s ease-in-out;
 	opacity: 0;
-	background-color: rgba(26, 188, 156, 0.9);
+	background-color: rgba(47,84,151, 0.9);
   }
   
   .portfolio .portfolio-item .portfolio-item-caption:hover {
-	opacity: 1;
+	opacity: 0.5;
   }
   
   .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
@@ -9893,7 +9902,7 @@
 	top: 1rem;
 	font-size: 3rem;
 	line-height: 3rem;
-	color: #1abc9c;
+	color: #2f5497 ;
 	opacity: 1;
   }
 
