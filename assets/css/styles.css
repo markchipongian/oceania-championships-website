@@ -219,6 +219,8 @@
   table {
 	border-collapse: collapse;
   }
+
+
   
   caption {
 	padding-top: 0.75rem;
@@ -9392,6 +9394,10 @@
 	text-transform: capitalize !important;
   }
 
+  .font-color-dark-grey{
+	color: #212529;
+  }
+
   .font-size-medium{
 	  font-size: 1.15rem;
   }
@@ -9632,6 +9638,11 @@
 	border: 5px solid var(--primary);
 	border-radius: 5px;
   }
+
+  .border-solid-rounder{
+	border: 4px solid var(--primary);
+	border-radius: 10px;
+  }
  
   .grid h2{
 	  font-size: 5rem;
@@ -9649,6 +9660,24 @@
 	min-height: 30rem;
 	background-size: cover;
   }
+
+  #venue_img{
+	min-height: 30rem;
+	background-size: cover;
+	width: 80%;
+	margin: auto;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 24px 37px 3px rgba(0,0,0,0.39);
+	-moz-box-shadow: 2px 24px 37px 3px rgba(0,0,0,0.39);
+	box-shadow: 2px 24px 37px 3px rgba(0,0,0,0.39);
+  }
+
+  @media (max-width: 990px) {
+	#venue_img{
+	  margin-bottom: 2rem;
+	}
+  }
+  
   
   @media (min-width: 768px) {
 	.page-section-showcase .showcase-text {
@@ -9818,6 +9847,10 @@
 	#mainNav.navbar-shrink .navbar-brand {
 	  font-size: 1.5em;
 	}
+  }
+
+  #accomodation_loc{
+	overflow: hidden;
   }
   
   .masthead {
