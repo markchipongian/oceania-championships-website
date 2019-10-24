@@ -264,7 +264,7 @@
     <!-- Fees -->
     <div class="col-lg-12 my-auto showcase-text"  id="registration">
       <h2>Registration And Entry</h2>
-      <p class="lead mb-0">All registrations must be entered online using the registration form provided here (Link to form) or sent using the this <a href="assets/imgs/Entry_form.png">entry form</a>.
+      <p class="lead mb-0">All registrations must be entered online using the registration form provided here: <button class="btn btn-info" data-toggle="modal" data-target="#onlineRegistrationModal">Online Registration</button> or sent using the this <a href="assets/imgs/Entry_form.png">entry form</a>.
       A maximum of <b><u>3 athletes per gender per country</u></b> may be registered in each category and division. The registration dates and entry fees are listed below:
       </p>
 
@@ -526,8 +526,40 @@
   
   </section>
 
-  <!-- The Tournament Section -->
-  <section class="page-section-showcase text-primary" id="other">
+  <!-- Other Information Section -->
+  <section class="page-section-showcase text-primary">
+
+    <!-- Header -->
+    <div class="col-lg-12 bg-secondary">
+      <h2 class="page-section-heading text-center text-uppercase text-white pt-4 mb-0" >Other Information</h2>
+      <div class="text-center pb-4 text-uppercase font-weight-bold font-size-medium text-white" >
+        <a class="js-scroll-trigger text-white" href="#other">Getting to Suva?</a>
+        <span class="pl-1 pr-1"><i class="fas fa-caret-left pr-1"></i><i class="fas fa-caret-right"></i></span>
+        <a class="js-scroll-trigger text-white" href="#">Meals</a>
+        <span class="pl-1 pr-1"><i class="fas fa-caret-left pr-1"></i><i class="fas fa-caret-right"></i></span>
+        <a class="js-scroll-trigger text-white" href="#">Transportation</a>
+      </div>
+    </div>
+
+    <!-- Transport to Suva -->
+    <div class="container-fluid p-0">
+      <div class="row no-gutters" id="other">
+        
+        <!-- Accommodation -->
+        <div class="col-lg-12 my-auto showcase-text pb-0">
+          <h2>Getting to Suva?</h2>
+          <p class="lead mb-5">There are two International Airports, in Suva (SUV) and Nadi (NAN).<br><br>
+            Suva International Airport is about 20km from Suva City.
+            Nadi International Airport is about 180km from Suva City.<br><br>
+            Most international flights arrive into Nadi International Airport. From there, participants can take a
+            domestic flight or land transport to Suva. If a Member Association wants transport from the airport to
+            their Accommodation, it can be booked by the Organizing Committee. All costs will need to be paid
+            by the MA.</p>
+        </div>
+
+      </div>
+    </div>
+
 
   </section>
 
@@ -599,6 +631,48 @@
     </div>
   </div>
 
+  <!-- Register Athelete Modal -->
+  <!-- W I P CONFIRM WITH GEORGE -->
+  <div class="portfolio-modal modal fade" id="onlineRegistrationModal" tabindex="-1" role="dialog" aria-labelledby="onlineRegistrationModal" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-5">Online Registration of Athelete</h2>
+
+                <div class="col-lg-12">
+                  <div class="row">
+                      <div class="col-lg-6">
+                        <label class="float-left lead font-weight-bold font-color-wao" for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" aria-describedby="fname" placeholder="Enter your first name">
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="float-left lead font-weight-bold font-color-wao" for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" aria-describedby="lname" placeholder="Enter your last name">
+                      </div>
+                  </div>
+                </div>
+                  
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <div class="m-auto">
+              <button type="button" class="btn btn-success mr-3 btn-lg">Register</button>
+              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
 
   <!-- Core Scripts jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
