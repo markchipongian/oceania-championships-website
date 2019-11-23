@@ -20,36 +20,40 @@
     cat = $('#age_cat').val();
     bow = $('#bow').val();
 
-    participant_array.push({ fname, lname, dob, cat, bow });
+    if (fname && lname && dob && cat && bow) {
+      participant_array.push({ fname, lname, dob, cat, bow });
 
-    $('#fname').val('');
-    $('#lname').val('');
-    $('#dob').val('');
-    $('#age_cat').val(0);
-    $('#bow').val(0);
+      $('#fname').val('');
+      $('#lname').val('');
+      $('#dob').val('');
+      $('#age_cat').val(0);
+      $('#bow').val(0);
 
-    $('#participants_container').removeClass('d-none');
-    $('#participant_table').empty();
-    participant_array.forEach(element => {
-      table_counter++;
-      $('#participant_table').append(
-        '<tr id=' +
-          table_counter +
-          '><td>' +
-          table_counter +
-          ')' +
-          element.fname +
-          '</td><td>' +
-          element.lname +
-          '</td><td>' +
-          element.dob +
-          '</td><td>' +
-          element.cat +
-          '</td><td>' +
-          element.bow +
-          '</td><td class="text-center"><button type="button" class="btn btn-danger del_btn"><i class="fas fa-times"></i></button></td></tr>'
-      );
-    });
+      $('#participants_container').removeClass('d-none');
+      $('#participant_table').empty();
+      participant_array.forEach(element => {
+        table_counter++;
+        $('#participant_table').append(
+          '<tr id=' +
+            table_counter +
+            '><td>' +
+            table_counter +
+            ')' +
+            element.fname +
+            '</td><td>' +
+            element.lname +
+            '</td><td>' +
+            element.dob +
+            '</td><td>' +
+            element.cat +
+            '</td><td>' +
+            element.bow +
+            '</td><td class="text-center"><button type="button" class="btn btn-danger del_btn"><i class="fas fa-times"></i></button></td></tr>'
+        );
+      });
+    } else {
+      alert('All participant fields must be filled.');
+    }
   });
 
   ///////////////////////////////////

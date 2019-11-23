@@ -110,7 +110,7 @@
       });
   });
 
-  //Modal setup
+  //Modal for hotels setup
   $('.portfolio-item').click(function() {
     var item = $(this).attr('id');
     $('#accomodationModal').modal('toggle');
