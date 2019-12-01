@@ -34,11 +34,11 @@
       participant_array.forEach(element => {
         table_counter++;
         $('#participant_table').append(
-          '<tr id=' +
-            table_counter +
-            '><td>' +
-            table_counter +
-            ')' +
+          '<<tr id=' +
+          table_counter +
+          '><td>' +
+          table_counter +
+          '</td><td>' +
             element.fname +
             '</td><td>' +
             element.lname +
@@ -84,7 +84,7 @@
             ++table_counter +
             '><td>' +
             table_counter +
-            ')' +
+            '</td><td>' +
             element.fname +
             '</td><td>' +
             element.lname +
