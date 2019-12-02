@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -700,102 +700,111 @@
 
                 <!-- Association and # of Officials -->
                 <div class="col-lg-12">
-                  <form id="reg_form" onsubmit="return false;">
-                  <div class="row mb-5">
-                      <!-- <div class="col-lg-8">
-                        <label class="float-left lead font-color-wao" for="assoc">Association</label>
-                        <input type="text" class="form-control" id="assoc" aria-describedby="assoc" placeholder="Enter your member association" required>
-                      </div> -->
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao" for="num_offical">Officials:</label>
-                        <input type="number" min="0" class="form-control" id="num_offical" aria-describedby="num_offical" placeholder="Enter the number of officials" required>
-                      </div>
-                  </div>
+                    <form id="login_form" onsubmit="return false">
+                        <div class="row mt-5">
+                            <div class="col-lg-6 m-auto">
+                                <label class="float-left lead font-color-wao" for="login">Username</label>
+                                <input type="text" class="form-control" id="login" aria-describedby="login" placeholder="Enter MA Username" required>
+                            </div>
+                            <div class="col-lg-6 m-auto">
+                                <label class="float-left lead font-color-wao" for="pass">Password</label>
+                                <input type="password" class="form-control" id="pass" aria-describedby="pass" placeholder="Enter password" required>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-lg-12 text-center m-auto">
+                                <button type="button" class="btn btn-success mr-3 btn-lg" id="login_btn">Login</button>
+                                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
 
-                  <div class="border-form p-2">
-                    <!-- Adding an athelete fname/lname/dob -->
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao mb-1" for="fname">First Name:</label>
-                        <input type="text" class="form-control" id="fname" aria-describedby="fname" placeholder="Enter first name">
-                      </div>
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao mb-1" for="lname">Last Name:</label>
-                        <input type="text" class="form-control" id="lname" aria-describedby="lname" placeholder="Enter last name">
-                      </div>
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao mb-1" for="dob">Date of Birth:</label>
-                        <input type="date" class="form-control" id="dob" aria-describedby="dob" placeholder="Enter D.O.B.">
-                      </div>
-                    </div>
+                    <form id="reg_form" onsubmit="return false;" style="display:none">
+                        <div class="row mb-5">
+                            <div class="col-lg-8">
+                                <label class="float-left lead font-color-wao" for="assoc">Association</label>
+                                <input type="text" class="form-control" id="assoc" aria-describedby="assoc" placeholder="Enter your member association" required disabled>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="float-left lead font-color-wao" for="num_offical">Officials:</label>
+                                <input type="number" min="0" class="form-control" id="num_offical" aria-describedby="num_offical" placeholder="Enter the number of officials" required>
+                            </div>
+                        </div>
 
-                    <!--  Adding an athelete catagory/bow -->
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao" for="age_cat">Age Category:</label>
-                        <select class="browser-default custom-select" id="age_cat">
-                          <option value="0" selected disabled>Select Age Category</option>
-                          <option value="Cadet">Cadet</option>
-                          <option value="Intermediate">Intermediate</option>
-                          <option value="Junior">Junior</option>
-                          <option value="Senior">Senior</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-4">
-                        <label class="float-left lead font-color-wao" for="bow">Bow Type:</label>
-                        <select class="browser-default custom-select mb-4" id="bow">
-                          <option value="0" selected disabled>Select Bow Type</option>
-                          <option value="Recurve">Recurve</option>
-                          <option value="Compound">Compound</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-4 text-center m-auto">
-                        <button type="button" class="btn btn-info" id="add_btn"><i class="fa fa-user-plus"></i> Add Participant</button>
-                      </div>
-                    </div>
-                  </div>
+                        <div class="border-form p-2">
+                            <!-- Adding an athelete fname/lname/dob -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="float-left lead font-color-wao mb-1" for="fname">First Name:</label>
+                                    <input type="text" class="form-control" id="fname" aria-describedby="fname" placeholder="Enter first name">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="float-left lead font-color-wao mb-1" for="lname">Last Name:</label>
+                                    <input type="text" class="form-control" id="lname" aria-describedby="lname" placeholder="Enter last name">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="float-left lead font-color-wao mb-1" for="dob">Date of Birth:</label>
+                                    <input type="date" class="form-control" id="dob" aria-describedby="dob" placeholder="Enter D.O.B.">
+                                </div>
+                            </div>
 
-                  <div class="row d-none" id="participants_container">
-                    <p class="font-size-large font-weight-bold font-color-wao lead ml-2 border-underline"><i class="fas fa-users"></i> Participants:</p>
-                    <table class="table table-borderless table-form table-responsive-sm lead">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Date of Birth</th>
-                          <th>Age Category</th>
-                          <th>Bow Type</th>
-                        </tr>
-                      </thead>
-                      <tbody id="participant_table">
-                      </tbody>
-                    </table>
-                  </div>
+                            <!--  Adding an athelete catagory/bow -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="float-left lead font-color-wao" for="age_cat">Age Category:</label>
+                                    <select class="browser-default custom-select" id="age_cat">
+                                        <option value="0" selected disabled>Select Age Category</option>
+                                        <option value="Cadet">Cadet</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Junior">Junior</option>
+                                        <option value="Senior">Senior</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="float-left lead font-color-wao" for="bow">Bow Type:</label>
+                                    <select class="browser-default custom-select mb-4" id="bow">
+                                        <option value="0" selected disabled>Select Bow Type</option>
+                                        <option value="Recurve">Recurve</option>
+                                        <option value="Compound">Compound</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 text-center m-auto">
+                                    <button type="button" class="btn btn-info" id="add_btn"><i class="fa fa-user-plus"></i> Add Participant</button>
+                                </div>
+                            </div>
+                        </div>
 
-                  <div class="row mt-5">
-                    <div class="col-lg-6 m-auto">
-                      <label class="float-left lead font-color-wao" for="login">Username</label>
-                      <input type="text" class="form-control" id="login" aria-describedby="login" placeholder="Enter MA Username" required>
-                    </div>
-                    <div class="col-lg-6 m-auto">
-                      <label class="float-left lead font-color-wao" for="pass">Password</label>
-                      <input type="password"class="form-control" id="pass" aria-describedby="pass" placeholder="Enter password" required>
-                    </div>
-                  </div>
-
-                </div>
-                  
+                        <div class="row d-none" id="participants_container">
+                            <p class="font-size-large font-weight-bold font-color-wao lead ml-2 border-underline"><i class="fas fa-users"></i> Participants:</p>
+                            <table class="table table-borderless table-form table-responsive-sm lead">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Date of Birth</th>
+                                        <th>Age Category</th>
+                                        <th>Bow Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="participant_table"></tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>   
               </div>
+            </div>
+
+            <div id="modal_alert" class="alert alert-success" style="display:none">
+              Registrations saved successfully!
             </div>
           </div>
 
-          <div class="modal-footer pt-0">
+          <div class="modal-footer" id="modal_footer" style="display:none">
             <div class="row m-auto">
               <button type="submit" class="btn btn-success mr-3 btn-lg" id="register_btn" disabled>Register</button>
-              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button><br>
             </div>
-            </form>
           </div>
         </div>
       </div>

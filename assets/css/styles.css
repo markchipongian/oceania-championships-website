@@ -5961,14 +5961,13 @@ a.close.disabled {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .modal-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 4rem 1rem;
   border-top: 0 solid #dee2e6;
   border-bottom-right-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
@@ -10351,6 +10350,14 @@ a.text-dark:focus {
   top: 1rem;
   font-size: 3rem;
   line-height: 3rem;
+  color: #2f5497;
+  opacity: 1;
+}
+
+.small-close {
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
   color: #2f5497;
   opacity: 1;
 }

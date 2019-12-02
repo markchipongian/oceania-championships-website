@@ -2,7 +2,75 @@
   'use strict';
 
   //Var declaration
-  var participant_array = new Array();
+    var participant_array = new Array();
+    var api_path = 'https://wafoceaniaregistration.azurewebsites.net/api';
+
+  ////////////////////////////////
+  //Authenticate
+  ////////////////////////////////
+    $('#login_btn').click(function () {
+        $.ajax({
+            method: 'POST',
+            url: api_path + '/account/authenticate',
+            crossDomain: true,
+            dataType: "json",
+            xhrFields: {
+                withCredentials: true
+            },
+            data: { username: $('#login').val(), password: $('#pass').val() },
+            success: function (data) {
+                $('#pass').val('');
+
+                if (data.authenticated) {
+                  $('#login_form').hide();
+                  $('#reg_form').show();
+                  $('#register_btn').prop('disabled', false);
+                  $('#assoc').val(data.country);
+                  $('#modal_footer').show();
+
+                  $.ajax({
+                      method: 'GET',
+                      url: api_path + '/registration/GetRegistrations',
+                      crossDomain: true,
+                      dataType: "json",
+                      xhrFields: {
+                          withCredentials: true
+                      },
+                      success: function (data) {
+                        $('#num_offical').val(data.num_official);
+                        participant_array = data.participant_array;
+                        if (data.participant_array.length) {
+                          $('#participants_container').removeClass('d-none');
+
+                          var table_counter = 0;
+
+                          participant_array.forEach(element => {
+                            table_counter++;
+                            $('#participant_table').append(
+                              '<<tr id=' +
+                              table_counter +
+                              '><td>' +
+                              table_counter +
+                              '</td><td>' +
+                                element.fname +
+                                '</td><td>' +
+                                element.lname +
+                                '</td><td>' +
+                                element.dob +
+                                '</td><td>' +
+                                element.cat +
+                                '</td><td>' +
+                                element.bow +
+                                '</td><td class="text-center"><button type="button" class="btn btn-danger del_btn"><i class="fas fa-times"></i></button></td></tr>'
+                            );
+                          });
+                        }
+                      }
+                  });
+                }
+            }
+        });
+    });
 
   ////////////////////////////////
   //Add Participant to table
@@ -61,9 +129,15 @@
   ///////////////////////////////////
   $('#onlineRegistrationModal').on('hidden.bs.modal', function() {
     participant_array = new Array();
-    table_counter = 0;
     $('#participants_container').addClass('d-none');
     $('#participant_table').empty();
+
+    $('#login_form').show();
+    $('#reg_form').hide();
+    $('#register_btn').prop('disabled', true);
+    $('#assoc').val('');
+    $('#modal_footer').hide();
+    $('#modal_alert').hide();
   });
 
   ////////////////////////////////////
@@ -105,15 +179,36 @@
   ///////////////////////////////////
   //Registers team
   ///////////////////////////////////
-  $('#reg_form').on('submit', function() {
+  $('#register_btn').on('click', function() {
     if (participant_array.length === 0) {
       alert('Please add participants to your team.');
     } else {
       var conf = confirm('Are you sure with your entry?');
       if (conf) {
-        console.log($('#assoc').val());
-        console.log($('#num_offical').val());
-        console.log(participant_array);
+          var registrations =
+              {
+                  assoc: $('#assoc').val(),
+                  num_official: $('#num_offical').val(),
+                  participant_array: participant_array
+              };
+
+          console.log(registrations);
+
+          $.ajax({
+              method: 'POST',
+              url: api_path + '/registration/SaveRegistrations',
+              crossDomain: true,
+              dataType: "json",
+              xhrFields: {
+                  withCredentials: true
+              },
+              data: { registration: registrations },
+              success: function (data) {
+                  console.log('yay');
+                  $('#modal_alert').show();
+                  $('#register_btn').prop('disabled', true);
+              }
+          });
       }
     }
   });
