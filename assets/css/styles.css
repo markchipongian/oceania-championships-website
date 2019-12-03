@@ -1520,10 +1520,6 @@ pre code {
   text-align: center;
 }
 
-.table-form thead {
-  border-top: 3px solid var(--primary);
-}
-
 .table-borderless th,
 .table-borderless td,
 .table-borderless thead th,

@@ -120,7 +120,7 @@
           'Grand Pacific Hotel';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation1.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation1-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           'Once established as the standard of luxury that was fit for royalty; now more than 100 years later,' +
           'the Grand Pacific Hotel remains true to the ideals of delivering the best of old world charms, South Pacific hospitality and contemporary service.';
@@ -146,11 +146,11 @@
         document.getElementById('accomodation_name').innerHTML = 'Holiday Inn';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation2.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation2-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           " Holiday Inn Suva is well-located for business, within 5 minutes' walk of major banks, embassies and the EU headquarters. Their 3 flexible meeting rooms, with wireless Internet and harbour views, provide a unique backdrop for events and you can catch up in the 24-hour Business Centre.";
         document.getElementById('wesbiteLink').innerHTML =
-          'https://www.ihg.com/holidayinn/<br>hotels/us/en/suva/suvvp/hoteldetail';
+          'https://www.ihg.com/holidayinn/<br>hotels/us/en/suva/br>suvvp/hoteldetail';
         document.getElementById('wesbiteLink').href =
           'https://www.ihg.com/holidayinn/hotels/us/en/suva/suvvp/hoteldetail';
         document.getElementById('address_content').innerHTML =
@@ -158,7 +158,7 @@
         document.getElementById('phone_content').innerHTML =
           '(679) 0 3301600 322';
         document.getElementById('email_content').innerHTML =
-          'reservations.holidayinnsuva@ihg.com';
+          'reservations.holidayin<br>nsuva@ihg.com';
         document.getElementById('reserve_content').innerHTML =
           'CALL RESERVATIONS 1 888 HOLIDAY (1 888 465 4329)';
         document
@@ -174,7 +174,7 @@
           'Suva Peninsula Hotel';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation3.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation3-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           'With 106 rooms, the hotel also offers a casual dining Restaurant, relaxing Lounge Bar and Conference facilities. Suva is the Capital of Fiji and is a beautiful Harbour City. The city is perched on a hilly Peninsula between Laucala Bay and Suva Harbour.';
         document.getElementById('wesbiteLink').innerHTML =
@@ -199,7 +199,7 @@
           'Tanoa Plaza Hotel';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation4.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation4-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           'Located in the heart of Suva, Fiji’s capital city and home to the nation’s businesses and diplomatic services, this is the place for corporate-minded travellers. From our central location, a short walk will take you to business houses, retail malls, and a myriad of markets and eateries.';
         document.getElementById('wesbiteLink').innerHTML =
@@ -225,7 +225,7 @@
           'Souther Cross Hotel';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation5.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation5-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           'Suva Southern Cross Hotel is a 10-minute walk from the Fiji Museum and a 15-minute drive from jungle trails and trails that lead to a waterfall. The tour desk organizes boat trips to other Fiji islands, shark diving sessions and excursions around the town. The property also offers a 24-hour business room and a spa with massage and beauty treatments.';
         document.getElementById('wesbiteLink').innerHTML =
@@ -250,7 +250,7 @@
           'Suva Motor Inn';
         document
           .getElementById('accomodation_img')
-          .setAttribute('src', 'assets/imgs/accomodation6.jpg');
+          .setAttribute('src', 'assets/imgs/accomodation6-1.jpg');
         document.getElementById('accomodation_desc').innerHTML =
           'The Suva Motor Inn is centrally located within walking distance to the city and close to the Government Buildings. Accommodation is in modern two bedroom and studio units set in quiet, peaceful rainforest surroundings, all two bedroom units have full kitchen facilities.';
         document.getElementById('wesbiteLink').innerHTML =
