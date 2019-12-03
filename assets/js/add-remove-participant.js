@@ -3,6 +3,7 @@
 
   //Var declaration
     var participant_array = new Array();
+    var official_array = new Array();
     var api_path = 'https://wafoceaniaregistration.azurewebsites.net/api';
 
   ////////////////////////////////
@@ -39,6 +40,12 @@
                       success: function (data) {
                         $('#num_offical').val(data.num_official);
                         participant_array = data.participant_array;
+                        official_array = data.official_array;
+
+                        if (typeof data.official_array == 'undefined' || data.official_array == null) {
+                          official_array = new Array();
+                        }
+
                         if (data.participant_array.length) {
                           $('#participants_container').removeClass('d-none');
 
@@ -62,6 +69,31 @@
                                 '</td><td>' +
                                 element.bow +
                                 '</td><td class="text-center"><button type="button" class="btn btn-danger del_btn"><i class="fas fa-times"></i></button></td></tr>'
+                            );
+                          });
+                        }
+
+                        if (typeof official_array !== 'undefined' && official_array.length > 0) {
+                          $('#officials_container').removeClass('d-none');
+
+                          var official_counter = 0;
+
+                          official_array.forEach(element => {
+                            table_counter++;
+                            $('#official_table').append(
+                              '<<tr id=' +
+                              official_counter +
+                              '><td>' +
+                              official_counter +
+                              '</td><td>' +
+                                element.fname +
+                                '</td><td>' +
+                                element.lname +
+                                '</td><td>' +
+                                element.dob +
+                                '</td><td>' +
+                                element.cat +
+                                '</td><td class="text-center"><button type="button" class="btn btn-danger del_off_btn"><i class="fas fa-times"></i></button></td></tr>'
                             );
                           });
                         }
@@ -122,6 +154,54 @@
     } else {
       alert('All participant fields must be filled.');
     }
+
+    $('#register_btn').prop('disabled', false);
+  });
+
+  $('#add_official_btn').click(function() {
+    var fname,
+      lname,
+      dob,
+      cat,
+      table_counter = 0;
+    fname = $('#ofname').val();
+    lname = $('#olname').val();
+    dob = $('#odob').val();
+    cat = $('#off_cat').val();
+
+    if (fname && lname && dob && cat && bow) {
+      official_array.push({ fname, lname, dob, cat });
+
+      $('#ofname').val('');
+      $('#olname').val('');
+      $('#odob').val('');
+      $('#off_cat').val(0);
+
+      $('#officials_container').removeClass('d-none');
+      $('#officials_table').empty();
+      official_array.forEach(element => {
+        table_counter++;
+        $('#officials_table').append(
+          '<<tr id=' +
+          table_counter +
+          '><td>' +
+          table_counter +
+          '</td><td>' +
+            element.fname +
+            '</td><td>' +
+            element.lname +
+            '</td><td>' +
+            element.dob +
+            '</td><td>' +
+            element.cat +
+            '</td><td class="text-center"><button type="button" class="btn btn-danger del_off_btn"><i class="fas fa-times"></i></button></td></tr>'
+        );
+      });
+    } else {
+      alert('All official fields must be filled.');
+    }
+
+    $('#register_btn').prop('disabled', false);
   });
 
   ///////////////////////////////////
@@ -131,6 +211,10 @@
     participant_array = new Array();
     $('#participants_container').addClass('d-none');
     $('#participant_table').empty();
+
+    official_array = new Array();
+    $('#officials_container').addClass('d-none');
+    $('#official_table').empty();
 
     $('#login_form').show();
     $('#reg_form').hide();
@@ -174,6 +258,41 @@
     } else {
       $('#participants_container').addClass('d-none');
     }
+
+    $('#register_btn').prop('disabled', false);
+  });
+
+  $('#officials_table').on('click', '.del_off_btn', function() {
+    var $row = jQuery(this).closest('tr');
+    var id = $row.attr('id');
+    official_array.splice(id - 1, 1);
+    $row.remove();
+    var table_counter = 0;
+
+    $('#officials_table').empty();
+    if (official_array.length > 0) {
+      official_array.forEach(element => {
+        $('#officials_table').append(
+          '<tr id=' +
+            ++table_counter +
+            '><td>' +
+            table_counter +
+            '</td><td>' +
+            element.fname +
+            '</td><td>' +
+            element.lname +
+            '</td><td>' +
+            element.dob +
+            '</td><td>' +
+            element.cat +
+            '</td><td class="text-center"><button type="button" class="btn btn-danger del_off_btn"><i class="fas fa-times"></i></button></td></tr>'
+        );
+      });
+    } else {
+      $('#officials_container').addClass('d-none');
+    }
+
+    $('#register_btn').prop('disabled', false);
   });
 
   ///////////////////////////////////
@@ -189,7 +308,8 @@
               {
                   assoc: $('#assoc').val(),
                   num_official: $('#num_offical').val(),
-                  participant_array: participant_array
+                  participant_array: participant_array,
+                  official_array: official_array
               };
 
           console.log(registrations);

@@ -701,7 +701,7 @@
                 <!-- Association and # of Officials -->
                 <div class="col-lg-12">
                     <form id="login_form" onsubmit="return false">
-                        <div class="row mt-5">
+                        <div class="row mt-2">
                             <div class="col-lg-6 m-auto">
                                 <label class="float-left lead font-color-wao" for="login">Username</label>
                                 <input type="text" class="form-control" id="login" aria-describedby="login" placeholder="Enter MA Username" required>
@@ -720,18 +720,20 @@
                     </form>
 
                     <form id="reg_form" onsubmit="return false;" style="display:none">
-                        <div class="row mb-5">
+                        <div class="row mb-2">
                             <div class="col-lg-8">
                                 <label class="float-left lead font-color-wao" for="assoc">Association</label>
                                 <input type="text" class="form-control" id="assoc" aria-describedby="assoc" placeholder="Enter your member association" required disabled>
                             </div>
-                            <div class="col-lg-4">
+                            <!-- <div class="col-lg-4">
                                 <label class="float-left lead font-color-wao" for="num_offical">Officials:</label>
                                 <input type="number" min="0" class="form-control" id="num_offical" aria-describedby="num_offical" placeholder="Enter the number of officials" required>
-                            </div>
+                            </div> -->
                         </div>
-
+                        <br>
+                        <p class="font-size-large font-weight-bold font-color-wao lead ml-2 border-underline"><i class="fas fa-users"></i> Athletes:</p>
                         <div class="border-form p-2">
+                            
                             <!-- Adding an athelete fname/lname/dob -->
                             <div class="row">
                                 <div class="col-lg-4">
@@ -766,6 +768,7 @@
                                         <option value="0" selected disabled>Select Bow Type</option>
                                         <option value="Recurve">Recurve</option>
                                         <option value="Compound">Compound</option>
+                                        <option value="Barebow">Barebow</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 text-center m-auto">
@@ -774,8 +777,7 @@
                             </div>
                         </div>
 
-                        <div class="row d-none" id="participants_container">
-                            <p class="font-size-large font-weight-bold font-color-wao lead ml-2 border-underline"><i class="fas fa-users"></i> Participants:</p>
+                        <div class="row mt-1 d-none" id="participants_container">
                             <table class="table table-borderless table-form table-responsive-sm lead">
                                 <thead>
                                     <tr>
@@ -790,6 +792,58 @@
                                 <tbody id="participant_table"></tbody>
                             </table>
                         </div>
+                        <br>
+                        <p class="font-size-large font-weight-bold font-color-wao lead ml-2 border-underline"><i class="fas fa-users"></i> Officials:</p>
+                        <div class="border-form p-2">
+                          <!-- Adding an official fname/lname/dob -->
+                          <div class="row">
+                              <div class="col-lg-4">
+                                  <label class="float-left lead font-color-wao mb-1" for="ofname">First Name:</label>
+                                  <input type="text" class="form-control" id="ofname" aria-describedby="ofname" placeholder="Enter first name">
+                              </div>
+                              <div class="col-lg-4">
+                                  <label class="float-left lead font-color-wao mb-1" for="olname">Last Name:</label>
+                                  <input type="text" class="form-control" id="olname" aria-describedby="olname" placeholder="Enter last name">
+                              </div>
+                              <div class="col-lg-4">
+                                  <label class="float-left lead font-color-wao mb-1" for="odob">Date of Birth:</label>
+                                  <input type="date" class="form-control" id="odob" aria-describedby="odob" placeholder="Enter D.O.B.">
+                              </div>
+                          </div>
+
+                          <!--  Adding an official function -->
+                          <div class="row">
+                              <div class="col-lg-4">
+                                  <label class="float-left lead font-color-wao" for="off_cat">Official Function:</label>
+                                  <select class="browser-default custom-select" id="off_cat">
+                                      <option value="0" selected disabled>Select Function</option>
+                                      <option value="Coach">Coach</option>
+                                      <option value="Assistant Coach">Assistant Coach</option>
+                                      <option value="Manager">Manager</option>
+                                      <option value="Assistant Manager">Assistant Manager</option>
+                                      <option value="Other Function">Other Function</option>
+                                  </select>
+                              </div>
+                              <div class="col-lg-4 text-center ml-auto mt-auto">
+                                  <button type="button" class="btn btn-info" id="add_official_btn"><i class="fa fa-user-plus"></i> Add Official</button>
+                              </div>
+                          </div>
+                      </div>
+
+                        <div class="row mt-1 d-none" id="officials_container">
+                          <table class="table table-borderless table-form table-responsive-sm lead">
+                              <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>First Name</th>
+                                      <th>Last Name</th>
+                                      <th>Date of Birth</th>
+                                      <th>Function</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="officials_table"></tbody>
+                          </table>
+                      </div>
                     </form>
                 </div>   
               </div>
