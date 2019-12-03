@@ -10,6 +10,8 @@
   //Authenticate
   ////////////////////////////////
     $('#login_btn').click(function () {
+      $('#login_btn').prop('disabled', true);
+      $('#login_fail_alert').hide();
         $.ajax({
             method: 'POST',
             url: api_path + '/account/authenticate',
@@ -41,6 +43,7 @@
                         $('#num_offical').val(data.num_official);
                         participant_array = data.participant_array;
                         official_array = data.official_array;
+                        $('#login_btn').prop('disabled', false);
 
                         if (typeof data.official_array == 'undefined' || data.official_array == null) {
                           official_array = new Array();
@@ -50,6 +53,7 @@
                           $('#participants_container').removeClass('d-none');
 
                           var table_counter = 0;
+                          $('#participant_table').empty();
 
                           participant_array.forEach(element => {
                             table_counter++;
@@ -77,10 +81,11 @@
                           $('#officials_container').removeClass('d-none');
 
                           var official_counter = 0;
+                          $('#officials_table').empty();
 
                           official_array.forEach(element => {
                             table_counter++;
-                            $('#official_table').append(
+                            $('#officials_table').append(
                               '<<tr id=' +
                               official_counter +
                               '><td>' +
@@ -99,6 +104,10 @@
                         }
                       }
                   });
+                }
+                else {
+                  $('#login_fail_alert').show();
+                  $('#login_btn').prop('disabled', false);
                 }
             }
         });
@@ -302,7 +311,8 @@
     if (participant_array.length === 0) {
       alert('Please add participants to your team.');
     } else {
-      var conf = confirm('Are you sure with your entry?');
+      $('#register_btn').prop('disabled', true);
+      var conf = confirm('Are you sure you want to save your Entries?');
       if (conf) {
           var registrations =
               {
@@ -329,6 +339,9 @@
                   $('#register_btn').prop('disabled', true);
               }
           });
+      }
+      else {
+        $('#register_btn').prop('disabled', false);
       }
     }
   });
